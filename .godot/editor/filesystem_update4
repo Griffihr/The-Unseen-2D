@@ -1,0 +1,15 @@
+res://Player.tscn
+res://Map.tscn
+res://ArmPivot.cs
+res://Camera.cs
+res://GameManager.cs
+res://HeadPivot.cs
+res://main.cs
+res://SceneManager.cs
+res://Server.cs
+res://main.tscn
+res://server.tscn
+res://Player.cs
+res://Main.tscn
+res://Server.tscn
+res://Main.cs

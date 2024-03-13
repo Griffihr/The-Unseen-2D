@@ -1,0 +1,14 @@
+AnimatedSprite2D
+AnimationPlayer
+Sprite2D
+MultiplayerSynchronizer
+Node2D
+TileMap
+LineEdit
+Button
+Control
+Node
+MeshInstance2D
+CollisionShape2D
+CollisionPolygon2D
+Camera2D

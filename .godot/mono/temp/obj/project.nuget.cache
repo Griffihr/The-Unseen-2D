@@ -1,0 +1,14 @@
+{
+  "version": 2,
+  "dgSpecHash": "BUeew1boC5leI15l79Vu5VuDzqLAnzgl3aCJtafaf9zWcIsqAaUK7FmEx7aOhAWzgtt8y6vT/OjISepsGNKTeg==",
+  "success": true,
+  "projectFilePath": "D:\\Godot Game\\2d hidden\\2d hidden.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Linus Gäddnäs\\.nuget\\packages\\godot.sourcegenerators\\4.2.1\\godot.sourcegenerators.4.2.1.nupkg.sha512",
+    "C:\\Users\\Linus Gäddnäs\\.nuget\\packages\\godotsharp\\4.2.1\\godotsharp.4.2.1.nupkg.sha512",
+    "C:\\Users\\Linus Gäddnäs\\.nuget\\packages\\microsoft.netcore.app.runtime.win-x64\\6.0.22\\microsoft.netcore.app.runtime.win-x64.6.0.22.nupkg.sha512",
+    "C:\\Users\\Linus Gäddnäs\\.nuget\\packages\\microsoft.windowsdesktop.app.runtime.win-x64\\6.0.22\\microsoft.windowsdesktop.app.runtime.win-x64.6.0.22.nupkg.sha512",
+    "C:\\Users\\Linus Gäddnäs\\.nuget\\packages\\microsoft.aspnetcore.app.runtime.win-x64\\6.0.22\\microsoft.aspnetcore.app.runtime.win-x64.6.0.22.nupkg.sha512"
+  ],
+  "logs": []
+}

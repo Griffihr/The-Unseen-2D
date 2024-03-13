@@ -1,0 +1,17 @@
+D:\Godot Game\2d hidden\.godot\mono\temp\bin\Debug\2d hidden.deps.json
+D:\Godot Game\2d hidden\.godot\mono\temp\bin\Debug\2d hidden.runtimeconfig.json
+D:\Godot Game\2d hidden\.godot\mono\temp\bin\Debug\2d hidden.dll
+D:\Godot Game\2d hidden\.godot\mono\temp\bin\Debug\2d hidden.pdb
+D:\Godot Game\2d hidden\.godot\mono\temp\bin\Debug\GodotSharp.dll
+D:\Godot Game\2d hidden\.godot\mono\temp\bin\Debug\GodotSharpEditor.dll
+D:\Godot Game\2d hidden\.godot\mono\temp\obj\Debug\2d hidden.csproj.AssemblyReference.cache
+D:\Godot Game\2d hidden\.godot\mono\temp\obj\Debug\2d hidden.GeneratedMSBuildEditorConfig.editorconfig
+D:\Godot Game\2d hidden\.godot\mono\temp\obj\Debug\2d hidden.AssemblyInfoInputs.cache
+D:\Godot Game\2d hidden\.godot\mono\temp\obj\Debug\2d hidden.AssemblyInfo.cs
+D:\Godot Game\2d hidden\.godot\mono\temp\obj\Debug\2d hidden.csproj.CoreCompileInputs.cache
+D:\Godot Game\2d hidden\.godot\mono\temp\obj\Debug\2d hidden.csproj.CopyComplete
+D:\Godot Game\2d hidden\.godot\mono\temp\obj\Debug\2d hidden.dll
+D:\Godot Game\2d hidden\.godot\mono\temp\obj\Debug\refint\2d hidden.dll
+D:\Godot Game\2d hidden\.godot\mono\temp\obj\Debug\2d hidden.pdb
+D:\Godot Game\2d hidden\.godot\mono\temp\obj\Debug\2d hidden.genruntimeconfig.cache
+D:\Godot Game\2d hidden\.godot\mono\temp\obj\Debug\ref\2d hidden.dll
