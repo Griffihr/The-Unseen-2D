@@ -7,7 +7,9 @@ public partial class Server : Node
 	private int Port = 8910;
 
 	[Export]
-	private string Ip_Adress = "127.0.0.1";
+	private string Ip_Adress = "172.25.88.35";
+
+
 	public int Max_Players = 10;
 
 	private Control _Control;
@@ -15,12 +17,29 @@ public partial class Server : Node
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
-		_Control = GetNode<Control>("Control");
+		_Control = GetNode<Control>("MainMenu");
 
 		Multiplayer.PeerConnected += PeerConnected;
 		Multiplayer.PeerDisconnected += PeerDisconnected;
 		Multiplayer.ConnectedToServer += ConnectedToServer;
 		Multiplayer.ConnectionFailed += ConnectionFailed;
+	}
+
+	public void PeerConnected(long id) {
+		GD.Print("Player Connected" + id.ToString());
+	}
+
+	public void PeerDisconnected(long id) {
+		GD.Print("Player disconnected" + id.ToString());
+	}
+
+	public void ConnectedToServer() {
+		GD.Print("Connected");
+		RpcId(1, "SendPlayerInformation", _Control.GetNode<LineEdit>("LineEdit").Text , Multiplayer.GetUniqueId());
+	}
+
+	public void ConnectionFailed() {
+		GD.Print("Failed to Connect");
 	}
 
 	public void StartServer() 
@@ -57,22 +76,7 @@ public partial class Server : Node
 		Rpc("StartGame");
 	}
 
-	public void PeerConnected(long id) {
-		GD.Print("Player Connected" + id.ToString());
-	}
 
-	public void PeerDisconnected(long id) {
-		GD.Print("Player disconnected" + id.ToString());
-	}
-
-	public void ConnectedToServer() {
-		GD.Print("Connected");
-		RpcId(1, "SendPlayerInformation", _Control.GetNode<LineEdit>("LineEdit").Text , Multiplayer.GetUniqueId());
-	}
-
-	public void ConnectionFailed() {
-		GD.Print("Failed to Connect");
-	}
 
 	[Rpc(MultiplayerApi.RpcMode.AnyPeer, CallLocal = true, TransferMode = MultiplayerPeer.TransferModeEnum.Reliable)]
 	public void StartGame() {
@@ -84,9 +88,9 @@ public partial class Server : Node
 
 		var Scene = GD.Load<PackedScene>("res://Map.tscn");	
 		var _Scene = Scene.Instantiate<Node>();
-		AddChild(_Scene);
-		
-		var _Control = this.GetNode<Control>("Control");
+
+		this.GetParent().AddChild(_Scene);
+
 		_Control.Hide();
 	}
 

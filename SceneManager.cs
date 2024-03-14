@@ -14,16 +14,13 @@ public partial class SceneManager : Node2D
 			Player _CurrentPlayer = PlayerScene.Instantiate<Player>();
 			_CurrentPlayer.Name = Item.Id.ToString();
 			AddChild(_CurrentPlayer);
-			
-			/*
-			foreach (Node2D SpawnPoint in GetTree().GetNodesInGroup("PlayerSpawnpoints")) {
-				GD.Print("Bomba" + Index);
+
+			foreach (Node2D SpawnPoint in GetTree().GetNodesInGroup("SpawnPoints")) {
 				if (int.Parse(SpawnPoint.Name) == Index) {
 					
 					_CurrentPlayer.GlobalPosition = SpawnPoint.GlobalPosition;
 				}
 			}
-			*/
 
 			Index++;
 			

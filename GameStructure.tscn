@@ -1,0 +1,51 @@
+[gd_scene format=3 uid="uid://bn4r3fxau4iqg"]
+
+[node name="Main" type="Node"]
+
+[node name="PlayersList" type="Node" parent="."]
+
+[node name="Menu" type="Node" parent="."]
+
+[node name="Host_join" type="Node" parent="Menu"]
+
+[node name="Lobby" type="Node" parent="Menu"]
+
+[node name="GameScene" type="Node" parent="."]
+
+[node name="Map" type="Node" parent="GameScene"]
+
+[node name="Rooms" type="Node" parent="GameScene/Map"]
+
+[node name="Background" type="Node" parent="GameScene/Map/Rooms"]
+
+[node name="Items" type="Node" parent="GameScene/Map/Rooms"]
+
+[node name="Vents" type="Node" parent="GameScene/Map"]
+
+[node name="Players" type="Node" parent="GameScene"]
+
+[node name="Hidden" type="Node" parent="GameScene/Players"]
+
+[node name="Model" type="Node" parent="GameScene/Players/Hidden"]
+
+[node name="Camera" type="Node" parent="GameScene/Players/Hidden/Model"]
+
+[node name="Collision" type="Node" parent="GameScene/Players/Hidden/Model"]
+
+[node name="Sprites" type="Node" parent="GameScene/Players/Hidden/Model"]
+
+[node name="Combines" type="Node" parent="GameScene/Players"]
+
+[node name="Model" type="Node" parent="GameScene/Players/Combines"]
+
+[node name="Sprites" type="Node" parent="GameScene/Players/Combines/Model"]
+
+[node name="Collision" type="Node" parent="GameScene/Players/Combines/Model"]
+
+[node name="Camera" type="Node" parent="GameScene/Players/Combines/Model"]
+
+[node name="Equipment" type="Node" parent="GameScene/Players/Combines/Model"]
+
+[node name="Gadgets" type="Node" parent="GameScene/Players/Combines/Model/Equipment"]
+
+[node name="Weapons" type="Node" parent="GameScene/Players/Combines/Model/Equipment"]

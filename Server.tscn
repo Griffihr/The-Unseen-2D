@@ -6,7 +6,7 @@
 script = ExtResource("1_aprhi")
 Ip_Adress = "172.25.88.35"
 
-[node name="Control" type="Control" parent="."]
+[node name="MainMenu" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 0
 offset_left = 144.0
@@ -14,7 +14,7 @@ offset_top = 211.0
 offset_right = 781.0
 offset_bottom = 575.0
 
-[node name="Button" type="Button" parent="Control"]
+[node name="Button" type="Button" parent="MainMenu"]
 layout_mode = 0
 offset_left = 52.0
 offset_top = 42.0
@@ -23,7 +23,7 @@ offset_bottom = 115.0
 text = "Create Server
 "
 
-[node name="Button2" type="Button" parent="Control"]
+[node name="Button2" type="Button" parent="MainMenu"]
 layout_mode = 0
 offset_left = 47.0
 offset_top = 149.0
@@ -31,7 +31,7 @@ offset_right = 271.0
 offset_bottom = 229.0
 text = "Join Server"
 
-[node name="Button3" type="Button" parent="Control"]
+[node name="Button3" type="Button" parent="MainMenu"]
 layout_mode = 0
 offset_left = 341.0
 offset_top = 64.0
@@ -40,13 +40,13 @@ offset_bottom = 170.0
 text = "Start
 "
 
-[node name="LineEdit" type="LineEdit" parent="Control"]
+[node name="LineEdit" type="LineEdit" parent="MainMenu"]
 layout_mode = 0
 offset_left = 86.0
 offset_top = -76.0
 offset_right = 463.0
 offset_bottom = -22.0
 
-[connection signal="pressed" from="Control/Button" to="." method="StartServer"]
-[connection signal="pressed" from="Control/Button2" to="." method="JoinServer"]
-[connection signal="pressed" from="Control/Button3" to="." method="StartGameButton"]
+[connection signal="pressed" from="MainMenu/Button" to="." method="StartServer"]
+[connection signal="pressed" from="MainMenu/Button2" to="." method="JoinServer"]
+[connection signal="pressed" from="MainMenu/Button3" to="." method="StartGameButton"]

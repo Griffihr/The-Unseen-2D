@@ -7,7 +7,8 @@ public partial class Player : CharacterBody2D
 	public float SprintSpeed = 0.0f;
 	public const float JumpVelocity = -400.0f;
 
-	public AnimatedSprite2D _AnimatedSprite2D;
+	private AnimatedSprite2D _AnimatedSprite2D;
+	private Camera2D _Camera2D;
 
 	// Get the gravity from the project settings to be synced with RigidBody nodes.
 	public float gravity = ProjectSettings.GetSetting("physics/2d/default_gravity").AsSingle();
@@ -15,11 +16,19 @@ public partial class Player : CharacterBody2D
 	public override void _Ready()
 	{
 		_AnimatedSprite2D = this.GetNode<AnimatedSprite2D>("AnimatedSprite2D");
+		_Camera2D = GetNode<Camera2D>("Camera2D");
+		
 		GetNode<MultiplayerSynchronizer>("MultiplayerSynchronizer").SetMultiplayerAuthority(int.Parse(Name));
+		_Camera2D.SetMultiplayerAuthority(int.Parse(Name));
 
+		if (_Camera2D.GetMultiplayerAuthority() == Multiplayer.GetUniqueId()) {
+			_Camera2D.MakeCurrent();
+		}
 
 		_AnimatedSprite2D.Play("Idle");
 	}
+
+	
 
 	public override void _Input(InputEvent @event)
 	{
@@ -40,6 +49,10 @@ public partial class Player : CharacterBody2D
 				_AnimatedSprite2D.FlipH = false;
 			}
 		}
+	}
+
+	public override void _Process(double delta) {
+			
 	}
 
 	public override void _PhysicsProcess(double delta)
@@ -67,8 +80,6 @@ public partial class Player : CharacterBody2D
 			{
 				SprintSpeed = 0;
 			}
-			// Get the input direction and handle the movement/deceleration.
-			// As good practice, you should replace UI actions with custom gameplay actions.
 
 			var HorizontalDirection	= Input.GetAxis("left", "right");
 			velocity.X = (Speed + SprintSpeed) * HorizontalDirection;

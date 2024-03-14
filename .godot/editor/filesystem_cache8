@@ -1,20 +1,21 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1710356220
+::res://::1710375416
 ArmPivot.cs::CSharpScript::-1::1710278911::0::1::::<>Node2D<>::
 Camera.cs::CSharpScript::-1::1710349184::0::1::::<>Camera2D<>::
-export_presets.cfg::TextFile::-1::1710356070::0::1::::<><>::
-GameManager.cs::CSharpScript::-1::1710344020::0::1::::<>Node<>::
+export_presets.cfg::TextFile::-1::1710356614::0::1::::<><>::
+GameManager.cs::CSharpScript::-1::1710360937::0::1::::<>Node<>::
 HeadPivot.cs::CSharpScript::-1::1710278867::0::1::::<>Node2D<>::
 icon.svg::CompressedTexture2D::1265962604230286722::1710254141::1710254152::1::::<><>::
-main.cs::CSharpScript::-1::1710343843::0::1::::<>Node<>::
-Main.tscn::PackedScene::1655757727788444995::1710356224::0::1::::<><>::res://main.cs
-Map.tscn::PackedScene::7243929293224736348::1710356100::0::1::::<><>::uid://c3px57jm8pevi::::res://Assets/Tiles/cavesofgallet.png<>res://SceneManager.cs<>uid://dx3ic0hbr8hym::::res://Player.tscn
-Player.cs::CSharpScript::-1::1710354220::0::1::::<>CharacterBody2D<>::
-Player.tscn::PackedScene::8831898663364506832::1710356099::0::1::::<><>::res://Player.cs<>res://Camera.cs<>uid://gmk61yudpgy6::::res://Assets/Character sprites/Free Assets Soldier Version Four/Black_Soldier.png
-PlayerInfo.cs::CSharpScript::-1::1710343843::0::1::::<><>::
-SceneManager.cs::CSharpScript::-1::1710349989::0::1::::<>Node2D<>::
-Server.cs::CSharpScript::-1::1710349623::0::1::::<>Node<>::
-Server.tscn::PackedScene::9138002864036915617::1710356100::0::1::::<><>::res://Server.cs
+Lobby.tscn::PackedScene::6337651732737243010::1710362624::0::1::::<><>::
+Main.cs::CSharpScript::-1::1710356548::0::1::::<>Node<>::
+Main.tscn::PackedScene::1655757727788444995::1710362623::0::1::::<><>::res://Main.cs
+Map.tscn::PackedScene::7243929293224736348::1710362624::0::1::::<><>::uid://c3px57jm8pevi::::res://Assets/Tiles/cavesofgallet.png<>res://SceneManager.cs<>uid://dx3ic0hbr8hym::::res://Player.tscn
+Player.cs::CSharpScript::-1::1710360718::0::1::::<>CharacterBody2D<>::
+Player.tscn::PackedScene::8831898663364506832::1710362623::0::1::::<><>::res://Player.cs<>res://Camera.cs<>uid://gmk61yudpgy6::::res://Assets/Character sprites/Free Assets Soldier Version Four/Black_Soldier.png
+PlayerInfo.cs::CSharpScript::-1::1710362627::0::1::::<><>::
+SceneManager.cs::CSharpScript::-1::1710360719::0::1::::<>Node2D<>::
+Server.cs::CSharpScript::-1::1710362599::0::1::::<>Node<>::
+Server.tscn::PackedScene::9138002864036915617::1710362624::0::1::::<><>::res://Server.cs
 ::res://Assets/::1710255442
 ::res://Assets/Character sprites/::1710255442
 ::res://Assets/Character sprites/Free Assets Soldier Version Four/::1710255446
