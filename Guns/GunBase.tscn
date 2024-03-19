@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://v0x7pluc1lc1"]
+
+[ext_resource type="Script" path="res://Guns/GunBase.cs" id="1_ckq68"]
+[ext_resource type="PackedScene" uid="uid://b6yako26swols" path="res://Guns/Bullet/Bullet.tscn" id="2_cfok5"]
+
+[node name="GunBase" type="Node2D"]
+script = ExtResource("1_ckq68")
+_BulletScene = ExtResource("2_cfok5")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+
+[node name="Marker2D" type="Marker2D" parent="."]
+
+[node name="Timer" type="Timer" parent="."]

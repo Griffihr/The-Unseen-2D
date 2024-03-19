@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://c3px57jm8pevi" path="res://Assets/Tiles/cavesofgallet.png" id="1_0ckpj"]
 [ext_resource type="Script" path="res://SceneManager.cs" id="1_hw3da"]
-[ext_resource type="PackedScene" uid="uid://dx3ic0hbr8hym" path="res://Player.tscn" id="2_u787f"]
+[ext_resource type="PackedScene" uid="uid://dkc1kcj7hslvv" path="res://Entities/Player.tscn" id="2_fihcm"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7cpg3"]
 texture = ExtResource("1_0ckpj")
@@ -1751,9 +1751,9 @@ texture = ExtResource("1_0ckpj")
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_7cpg3")
 
-[node name="Node2D" type="Node2D"]
+[node name="SceneManager" type="Node2D"]
 script = ExtResource("1_hw3da")
-PlayerScene = ExtResource("2_u787f")
+PlayerScene = ExtResource("2_fihcm")
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_t178m")

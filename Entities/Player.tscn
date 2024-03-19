@@ -1,0 +1,162 @@
+[gd_scene load_steps=23 format=3 uid="uid://dkc1kcj7hslvv"]
+
+[ext_resource type="Script" path="res://Entities/Player.cs" id="1_ramco"]
+[ext_resource type="Texture2D" uid="uid://gmk61yudpgy6" path="res://Assets/Character sprites/Free Assets Soldier Version Four/Black_Soldier.png" id="2_m73ri"]
+[ext_resource type="Script" path="res://Guns/GunManager.cs" id="2_u2anc"]
+[ext_resource type="Resource" uid="uid://bk70wi6iv1veh" path="res://Guns/EquipmentDictionary.tres" id="3_cv20o"]
+[ext_resource type="PackedScene" uid="uid://joip3xub2wqt" path="res://Components/MovementComponents/InputComponent.tscn" id="5_m85x2"]
+[ext_resource type="PackedScene" uid="uid://bclr7kdp31bcu" path="res://Components/MovementComponents/VelocityComponent.tscn" id="6_v157f"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_dxcue"]
+radius = 7.0
+height = 40.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lltpt"]
+atlas = ExtResource("2_m73ri")
+region = Rect2(0, 938, 116, 67)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w4f1s"]
+atlas = ExtResource("2_m73ri")
+region = Rect2(116, 938, 116, 67)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7dnxw"]
+atlas = ExtResource("2_m73ri")
+region = Rect2(232, 938, 116, 67)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g8bax"]
+atlas = ExtResource("2_m73ri")
+region = Rect2(0, 1005, 116, 67)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fqwh6"]
+atlas = ExtResource("2_m73ri")
+region = Rect2(116, 1005, 116, 67)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mtbbi"]
+atlas = ExtResource("2_m73ri")
+region = Rect2(0, 335, 116, 67)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5bsy8"]
+atlas = ExtResource("2_m73ri")
+region = Rect2(116, 335, 116, 67)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_876ju"]
+atlas = ExtResource("2_m73ri")
+region = Rect2(232, 335, 116, 67)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_whnag"]
+atlas = ExtResource("2_m73ri")
+region = Rect2(0, 402, 116, 67)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3bitt"]
+atlas = ExtResource("2_m73ri")
+region = Rect2(116, 402, 116, 67)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dh0c1"]
+atlas = ExtResource("2_m73ri")
+region = Rect2(232, 402, 116, 67)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6bdci"]
+atlas = ExtResource("2_m73ri")
+region = Rect2(0, 469, 116, 67)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h22pb"]
+atlas = ExtResource("2_m73ri")
+region = Rect2(116, 469, 116, 67)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_sne6i"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lltpt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w4f1s")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7dnxw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g8bax")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fqwh6")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mtbbi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5bsy8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_876ju")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_whnag")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3bitt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dh0c1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6bdci")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h22pb")
+}],
+"loop": true,
+"name": &"Running",
+"speed": 10.0
+}]
+
+[sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_spxx7"]
+properties/0/path = NodePath(".:position")
+properties/0/spawn = true
+properties/0/replication_mode = 1
+properties/1/path = NodePath("AnimatedSprite2D:animation")
+properties/1/spawn = true
+properties/1/replication_mode = 1
+properties/2/path = NodePath("AnimatedSprite2D:flip_h")
+properties/2/spawn = true
+properties/2/replication_mode = 1
+
+[node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("inputComponent", "velocityComponent")]
+position = Vector2(581, 230)
+script = ExtResource("1_ramco")
+inputComponent = NodePath("InputComponent")
+velocityComponent = NodePath("VelocityComponent")
+
+[node name="Body" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_dxcue")
+
+[node name="GunManager" type="Node2D" parent="Body"]
+position = Vector2(10, 1)
+script = ExtResource("2_u2anc")
+GunResource = ExtResource("3_cv20o")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -13)
+scale = Vector2(1, 1.00746)
+sprite_frames = SubResource("SpriteFrames_sne6i")
+animation = &"Idle"
+
+[node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="."]
+replication_config = SubResource("SceneReplicationConfig_spxx7")
+
+[node name="InputComponent" parent="." instance=ExtResource("5_m85x2")]
+
+[node name="VelocityComponent" parent="." node_paths=PackedStringArray("Character", "Input") instance=ExtResource("6_v157f")]
+Speed = 200.0
+JumpSpeed = -400.0
+RunSpeed = 100.0
+CrouchSpeed = 100.0
+Character = NodePath("..")
+Input = NodePath("../InputComponent")

@@ -4,15 +4,15 @@ using System;
 public partial class Main : Node
 {
 	
-		public Node ServerNode;	
+		public Node ConnectNode;	
 	
 	// Called when the node enters the scene tree for the first time.
 	
 	public override void _Ready()
 	{
-		var ServerNode = GD.Load<PackedScene>("res://Server.tscn");	
-		var _ServerInstance = ServerNode.Instantiate<Node>();
-		AddChild(_ServerInstance);	
+		var ConnectNode = GD.Load<PackedScene>("res://Menus/Menus.tscn");	
+		var _ConnectInstance = ConnectNode.Instantiate<Node>();
+		AddChild(_ConnectInstance);	
 
 	}
 

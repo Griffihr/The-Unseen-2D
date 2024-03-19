@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=3 uid="uid://cm5kt55318ko7"]
+
+[ext_resource type="Script" path="res://Guns/GunManager.cs" id="1_kiutq"]
+[ext_resource type="PackedScene" uid="uid://by2hka8gfj4dl" path="res://Guns/Secondary/Pistol/Pistol.tscn" id="2_7x2um"]
+
+[node name="GunManager" type="Node2D"]
+script = ExtResource("1_kiutq")
+_PrimaryGuns = Array[PackedScene]([ExtResource("2_7x2um")])

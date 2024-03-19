@@ -1,0 +1,106 @@
+[gd_scene load_steps=2 format=3 uid="uid://d4e64q2n86tnw"]
+
+[ext_resource type="Script" path="res://Menus/Menus.cs" id="1_euslj"]
+
+[node name="Menus" type="Node"]
+script = ExtResource("1_euslj")
+
+[node name="Connect" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 1.0
+offset_top = -1.0
+offset_right = 1153.0
+offset_bottom = 647.0
+
+[node name="CreateButton" type="Button" parent="Connect"]
+layout_mode = 0
+offset_left = 68.0
+offset_top = 308.0
+offset_right = 251.0
+offset_bottom = 378.0
+text = "Create Server
+"
+
+[node name="JoinButton" type="Button" parent="Connect"]
+layout_mode = 0
+offset_left = 68.0
+offset_top = 391.0
+offset_right = 252.0
+offset_bottom = 459.0
+text = "Join Server"
+
+[node name="PlayerName" type="LineEdit" parent="Connect"]
+layout_mode = 0
+offset_left = 63.0
+offset_top = 45.0
+offset_right = 440.0
+offset_bottom = 99.0
+
+[node name="Label" type="Label" parent="Connect/PlayerName"]
+layout_mode = 0
+offset_left = 1.0
+offset_top = -24.0
+offset_right = 289.0
+offset_bottom = 3.0
+text = "Player Name
+"
+
+[node name="Ip" type="LineEdit" parent="Connect"]
+layout_mode = 0
+offset_left = 63.0
+offset_top = 138.0
+offset_right = 433.0
+offset_bottom = 192.0
+
+[node name="Label2" type="Label" parent="Connect/Ip"]
+layout_mode = 0
+offset_left = 4.0
+offset_top = -22.0
+offset_right = 171.0
+offset_bottom = 19.0
+text = "Ip-Adress"
+
+[node name="Port" type="LineEdit" parent="Connect"]
+layout_mode = 0
+offset_left = 66.0
+offset_top = 227.0
+offset_right = 300.0
+offset_bottom = 285.0
+
+[node name="Label" type="Label" parent="Connect/Port"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.17
+anchor_right = -0.17
+offset_left = 40.78
+offset_top = -19.0
+offset_right = 78.78
+offset_bottom = 5.0
+text = "Port"
+
+[node name="Lobby" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="StartButton" type="Button" parent="Lobby"]
+layout_mode = 0
+offset_left = 485.0
+offset_top = 275.0
+offset_right = 649.0
+offset_bottom = 381.0
+text = "Start Game
+"
+
+[node name="OptionButton" type="OptionButton" parent="Lobby"]
+layout_mode = 0
+offset_left = 689.0
+offset_top = 275.0
+offset_right = 922.0
+offset_bottom = 328.0
+
+[connection signal="pressed" from="Connect/CreateButton" to="." method="StartServer"]
+[connection signal="pressed" from="Connect/JoinButton" to="." method="JoinServer"]
+[connection signal="pressed" from="Lobby/StartButton" to="." method="StartGameButton"]
