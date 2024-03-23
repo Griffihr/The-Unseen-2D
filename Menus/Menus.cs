@@ -3,15 +3,6 @@ using System;
 
 public partial class Menus : Node
 {
-	[Export]
-	private int Port = 8910;
-
-	[Export]
-	private string Ip_Adress = "172.25.88.35";
-
-
-	public int Max_Players = 10;
-
 	private Control _Connect;
 	private Control _Lobby;
 	private OptionButton _Optionbutton;
@@ -42,7 +33,7 @@ public partial class Menus : Node
 
 	public void ConnectedToServer() {
 		GD.Print("Connected");
-		RpcId(1, "SendPlayerInformation", _Connect.GetNode<LineEdit>("LineEdit").Text , Multiplayer.GetUniqueId());
+		RpcId(1, "SendPlayerInformation", _Connect.GetNode<LineEdit>("PlayerName").Text , Multiplayer.GetUniqueId());
 	}
 
 	public void ConnectionFailed() {
@@ -64,9 +55,8 @@ public partial class Menus : Node
 		Peer.Host.Compress(ENetConnection.CompressionMode.RangeCoder);
 		Multiplayer.MultiplayerPeer = Peer;
 
-		GD.Print("Server Started");
-
 		SendPlayerInformation(_Connect.GetNode<LineEdit>("PlayerName").Text, 1);
+		GD.Print("Server Started");
 
 		_Connect.Hide();
 		_Lobby.Show();
@@ -74,15 +64,19 @@ public partial class Menus : Node
 	}
 
 	public void JoinServer() {
+
+		var _Port = int.Parse(_Connect.GetNode<LineEdit>("Port").Text);
+		var _IpAdress = _Connect.GetNode<LineEdit>("Ip").Text;
+
 		ENetMultiplayerPeer Peer = new ENetMultiplayerPeer();
-		var Error = Peer.CreateClient(Ip_Adress, Port);
+		var Error = Peer.CreateClient(_IpAdress, _Port);
+		
 		if(Error != Error.Ok) {
 			GD.Print("Error" + Error.ToString());
 			return;
 		}
 		
 		Peer.Host.Compress(ENetConnection.CompressionMode.RangeCoder);
-		
 		Multiplayer.MultiplayerPeer = Peer;
 
 		_Connect.Hide();
@@ -98,18 +92,11 @@ public partial class Menus : Node
 
 	[Rpc(MultiplayerApi.RpcMode.AnyPeer, CallLocal = true, TransferMode = MultiplayerPeer.TransferModeEnum.Reliable)]
 	public void StartGame() {
-		
-		foreach (var item in GameManager.Players) 
-		{
-			GD.Print(item.Name + "Is Playing");
-		}
-
 		_Lobby.Hide();
 
 		var Scene = GD.Load<PackedScene>("res://Map.tscn");	
 		var _Scene = Scene.Instantiate<Node>();
 		this.GetParent().AddChild(_Scene);
-
 	}
 
 	[Rpc(MultiplayerApi.RpcMode.AnyPeer)]

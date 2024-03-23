@@ -11,16 +11,16 @@ public partial class Bullet : RigidBody2D
 	}
 
   public void SpawnBullet(float Rotation, float speed) {
-    Velocity = new Vector2(speed, 0).Rotated(Rotation);
+	Velocity = new Vector2(speed, 0).Rotated(Rotation);
   }
 
   public override void _PhysicsProcess(double delta)
   {
-      KinematicCollision2D _KC = MoveAndCollide(Velocity);
+	  KinematicCollision2D _KC = MoveAndCollide(Velocity);
 
-      if (_KC != null) {
-        this.QueueFree();
-      } 
-      
+	  if (_KC != null) {
+		this.QueueFree();
+	  } 
+	  
   }
 }
