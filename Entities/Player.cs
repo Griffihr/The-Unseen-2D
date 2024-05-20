@@ -49,7 +49,7 @@ public partial class Player : CharacterBody2D
 			inputComponent.GetInputs(delta);
 			
 			velocityComponent.SetVelocity(delta);
-		
+			
 		}
 	}
 }

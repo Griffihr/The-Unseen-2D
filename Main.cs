@@ -11,8 +11,8 @@ public partial class Main : Node
 	public override void _Ready()
 	{
 		var ConnectNode = GD.Load<PackedScene>("res://Menus/Menus.tscn");	
-		var _ConnectInstance = ConnectNode.Instantiate<Node>();
-		AddChild(_ConnectInstance);	
+		var connectInstance = ConnectNode.Instantiate<Node>();
+		AddChild(connectInstance);	
 
 	}
 

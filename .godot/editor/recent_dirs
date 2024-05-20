@@ -1,5 +1,6 @@
-res://Guns
+res://Components/HitBoxComponents
 res://Components/MovementComponents
+res://Guns
 res://Components
 res://Entities
 res://Guns/Bullet

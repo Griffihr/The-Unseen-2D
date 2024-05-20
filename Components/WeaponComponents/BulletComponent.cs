@@ -10,9 +10,11 @@ public partial class BulletComponent : Node2D
 	[Export]
 	public Marker2D marker2D;
 
+	public float Damage;
+
 	public void SpawnBullet() {
 		Bullet _B = bulletScene.Instantiate<Bullet>();
-		_B.SpawnBullet(GlobalRotation, Speed);
+		_B.SpawnBullet(GlobalRotation, Speed, Damage);
 		
 		_B.Rotation = GlobalRotation;
 		_B.Position = marker2D.GlobalPosition;

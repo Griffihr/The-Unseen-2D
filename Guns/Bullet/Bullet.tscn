@@ -1,21 +1,18 @@
-[gd_scene load_steps=4 format=3 uid="uid://b6yako26swols"]
+[gd_scene load_steps=5 format=3 uid="uid://b6yako26swols"]
 
 [ext_resource type="Script" path="res://Guns/Bullet/Bullet.cs" id="1_arao3"]
-
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_2fcm1"]
-radius = 4.0
-height = 24.0
+[ext_resource type="PackedScene" uid="uid://u1t0my02buck" path="res://Components/HitBoxComponents/HitBoxComponent.tscn" id="2_txk15"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_e5lx2"]
 
-[node name="Bullet" type="RigidBody2D"]
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_xvyg2"]
+radius = 1.0
+height = 6.0
+
+[node name="Bullet" type="CharacterBody2D" node_paths=PackedStringArray("hitBoxComponent")]
 position = Vector2(3, 0)
 script = ExtResource("1_arao3")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-rotation = 1.5708
-scale = Vector2(0.25, 0.25)
-shape = SubResource("CapsuleShape2D_2fcm1")
+hitBoxComponent = NodePath("HitBoxComponent")
 
 [node name="MeshInstance2D" type="MeshInstance2D" parent="."]
 position = Vector2(1.13687e-13, -1.49012e-08)
@@ -28,4 +25,10 @@ wait_time = 3.0
 one_shot = true
 autostart = true
 
-[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[node name="HitBoxComponent" parent="." instance=ExtResource("2_txk15")]
+rotation = 1.5708
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitBoxComponent"]
+shape = SubResource("CapsuleShape2D_xvyg2")
+
+[connection signal="timeout" from="Timer" to="." method="OnTimerTimeout"]

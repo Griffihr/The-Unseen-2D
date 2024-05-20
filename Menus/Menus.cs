@@ -4,7 +4,7 @@ using System;
 public partial class Menus : Node
 {
 	[Export]
-	private int Port = 8910;
+	private int Port;
 
 	[Export]
 	private string Ip_Adress = "172.25.88.35";
@@ -12,19 +12,23 @@ public partial class Menus : Node
 
 	public int Max_Players = 10;
 
-	private Control _Connect;
-	private Control _Lobby;
-	private OptionButton _Optionbutton;
+	private Control connect;
+	private Control lobby;
+	private OptionButton optionButton;
+	private LineEdit port;
 
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
-		_Connect = GetNode<Control>("Connect");
-		_Lobby = GetNode<Control>("Lobby");
+		connect = GetNode<Control>("Connect");
+		lobby = GetNode<Control>("Lobby");
 
-		_Optionbutton = GetNode<OptionButton>("Lobby/OptionButton");
+		optionButton = GetNode<OptionButton>("Lobby/OptionButton");
 
-		_Lobby.Hide();
+		port = connect.GetNode<LineEdit>("Port");
+		port.Text = "8910";
+
+		lobby.Hide();
 
 		Multiplayer.PeerConnected += PeerConnected;
 		Multiplayer.PeerDisconnected += PeerDisconnected;
@@ -42,7 +46,7 @@ public partial class Menus : Node
 
 	public void ConnectedToServer() {
 		GD.Print("Connected");
-		RpcId(1, "SendPlayerInformation", _Connect.GetNode<LineEdit>("LineEdit").Text , Multiplayer.GetUniqueId());
+		RpcId(1, "SendPlayerInformation", connect.GetNode<LineEdit>("PlayerName").Text , Multiplayer.GetUniqueId());
 	}
 
 	public void ConnectionFailed() {
@@ -51,11 +55,11 @@ public partial class Menus : Node
 
 	public void StartServer() 
 	{
-		var _Port = int.Parse(_Connect.GetNode<LineEdit>("Port").Text);
+		Port = int.Parse(port.Text);
 
 		ENetMultiplayerPeer Peer = new ENetMultiplayerPeer();
 
-		var Error = Peer.CreateServer(_Port, 2);
+		var Error = Peer.CreateServer(Port, 2);
 		if(Error != Error.Ok) {
 			GD.Print("Error" + Error.ToString());
 			return;
@@ -66,14 +70,16 @@ public partial class Menus : Node
 
 		GD.Print("Server Started");
 
-		SendPlayerInformation(_Connect.GetNode<LineEdit>("PlayerName").Text, 1);
+		SendPlayerInformation(connect.GetNode<LineEdit>("PlayerName").Text, 1);
 
-		_Connect.Hide();
-		_Lobby.Show();
+		connect.Hide();
+		lobby.Show();
 
 	}
 
 	public void JoinServer() {
+		Port = int.Parse(port.Text);
+
 		ENetMultiplayerPeer Peer = new ENetMultiplayerPeer();
 		var Error = Peer.CreateClient(Ip_Adress, Port);
 		if(Error != Error.Ok) {
@@ -85,8 +91,8 @@ public partial class Menus : Node
 		
 		Multiplayer.MultiplayerPeer = Peer;
 
-		_Connect.Hide();
-		_Lobby.Show();
+		connect.Hide();
+		lobby.Show();
 	}
 
 	
@@ -104,7 +110,7 @@ public partial class Menus : Node
 			GD.Print(item.Name + "Is Playing");
 		}
 
-		_Lobby.Hide();
+		lobby.Hide();
 
 		var Scene = GD.Load<PackedScene>("res://Map.tscn");	
 		var _Scene = Scene.Instantiate<Node>();

@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://dkc1kcj7hslvv"]
+[gd_scene load_steps=26 format=3 uid="uid://dkc1kcj7hslvv"]
 
 [ext_resource type="Script" path="res://Entities/Player.cs" id="1_ramco"]
 [ext_resource type="Texture2D" uid="uid://gmk61yudpgy6" path="res://Assets/Character sprites/Free Assets Soldier Version Four/Black_Soldier.png" id="2_m73ri"]
@@ -6,6 +6,8 @@
 [ext_resource type="Resource" uid="uid://bk70wi6iv1veh" path="res://Guns/EquipmentDictionary.tres" id="3_cv20o"]
 [ext_resource type="PackedScene" uid="uid://joip3xub2wqt" path="res://Components/MovementComponents/InputComponent.tscn" id="5_m85x2"]
 [ext_resource type="PackedScene" uid="uid://bclr7kdp31bcu" path="res://Components/MovementComponents/VelocityComponent.tscn" id="6_v157f"]
+[ext_resource type="PackedScene" uid="uid://d2fqbdaf4s5eq" path="res://Components/HitBoxComponents/HurtBoxComponent.tscn" id="7_celn3"]
+[ext_resource type="PackedScene" uid="uid://b0fwdwdu8dwrl" path="res://Components/PlayerComponents/HealthComponent.tscn" id="8_qm8t4"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_dxcue"]
 radius = 7.0
@@ -116,15 +118,10 @@ animations = [{
 }]
 
 [sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_spxx7"]
-properties/0/path = NodePath(".:position")
-properties/0/spawn = true
-properties/0/replication_mode = 1
-properties/1/path = NodePath("AnimatedSprite2D:animation")
-properties/1/spawn = true
-properties/1/replication_mode = 1
-properties/2/path = NodePath("AnimatedSprite2D:flip_h")
-properties/2/spawn = true
-properties/2/replication_mode = 1
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_qbjhn"]
+radius = 7.0
+height = 40.0
 
 [node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("inputComponent", "velocityComponent")]
 position = Vector2(581, 230)
@@ -160,3 +157,12 @@ RunSpeed = 100.0
 CrouchSpeed = 100.0
 Character = NodePath("..")
 Input = NodePath("../InputComponent")
+
+[node name="HurtBoxComponent" parent="." node_paths=PackedStringArray("healthComponent", "collisionShape2D") instance=ExtResource("7_celn3")]
+healthComponent = NodePath("../HealthComponent")
+collisionShape2D = NodePath("CollisionShape2D")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBoxComponent"]
+shape = SubResource("CapsuleShape2D_qbjhn")
+
+[node name="HealthComponent" parent="." instance=ExtResource("8_qm8t4")]
