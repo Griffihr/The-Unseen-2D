@@ -6,25 +6,16 @@ res://Components/HitBoxComponents/HitBoxComponent.tscn
 res://Components/HitBoxComponents/HurtBoxComponent.tscn
 res://Camera.cs
 res://CharacterBody2D.cs
-<<<<<<< HEAD
 res://Components/HitBoxComponents/HitBoxComponent.cs
 res://Components/HitBoxComponents/HurtBoxComponent.cs
-=======
-res://CollisionComponent.cs
->>>>>>> 87a8872a35c24054033efdee13689ac3607d9989
 res://Components/MovementComponents/InputComponent.cs
 res://Components/MovementComponents/VelocityComponent.cs
-res://Components/PlayerComponents/AnimationComponent.cs
 res://Components/PlayerComponents/HealthComponent.cs
 res://Components/WeaponComponents/AmmoComponent.cs
 res://Components/WeaponComponents/BulletComponent.cs
 res://Components/WeaponComponents/ShootComponent.cs
 res://Entities/Player.cs
 res://GameManager.cs
-<<<<<<< HEAD
-=======
-res://Guns/Bullet/Bullet.cs
->>>>>>> 87a8872a35c24054033efdee13689ac3607d9989
 res://Guns/EquipmentDictionary.cs
 res://Guns/GunBase.cs
 res://Guns/GunManager.cs
@@ -32,13 +23,8 @@ res://Guns/Secondary/Pistol/Pistol.cs
 res://Main.cs
 res://Menus/Menus.cs
 res://SceneManager.cs
-<<<<<<< HEAD
 res://Menus/Menus.tscn
 res://addons/netfox/network-time-synchronizer.gd
 res://addons/netfox.internals/logger.gd
 res://addons/netfox.internals/plugin.gd
 res://addons/netfox.noray/netfox-noray.gd
-=======
-res://Entities/Player.tscn
-res://Menus/Menus.tscn
->>>>>>> 87a8872a35c24054033efdee13689ac3607d9989

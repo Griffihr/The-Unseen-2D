@@ -9,7 +9,7 @@
             "type": "coreclr",
             "request": "launch",
             "preLaunchTask": "build",
-            "program": "E:/Godot/Godot",
+            "program": "D:/Godot Game/Godot_Install/Godot",
             "cwd": "${workspaceFolder}",
             "stopAtEntry": false,
             "args": ["--path","${workspaceRoot}"]

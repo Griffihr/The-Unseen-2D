@@ -13,7 +13,6 @@ public partial class SceneManager : Node2D
 		foreach (var Item in GameManager.Players) {
 			Player _CurrentPlayer = PlayerScene.Instantiate<Player>();
 			_CurrentPlayer.Name = Item.Id.ToString();
-			_CurrentPlayer.SetMultiplayerAuthority(Item.Id);
 			AddChild(_CurrentPlayer);
 
 			foreach (Node2D SpawnPoint in GetTree().GetNodesInGroup("SpawnPoints")) {

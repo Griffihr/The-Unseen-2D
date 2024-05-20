@@ -14,7 +14,6 @@ public partial class Bullet : Godot.CharacterBody2D
   }
   private float bulletDamage;
 
-<<<<<<< HEAD
   public void OnTimerTimeout()
   {
     this.QueueFree();
@@ -24,27 +23,14 @@ public partial class Bullet : Godot.CharacterBody2D
   {
     BulletDamage = damage;
     Velocity = new Vector2(speed, 0).Rotated(Rotation);
-=======
-  public void SpawnBullet(float Rotation, float speed) {
-	Velocity = new Vector2(speed, 0).Rotated(Rotation);
->>>>>>> 87a8872a35c24054033efdee13689ac3607d9989
   }
 
   public override void _PhysicsProcess(double delta)
   {
-<<<<<<< HEAD
     var kc = MoveAndCollide(Velocity);
     
     if (kc != null) {
       this.QueueFree();
     }
-=======
-	  KinematicCollision2D _KC = MoveAndCollide(Velocity);
-
-	  if (_KC != null) {
-		this.QueueFree();
-	  } 
-	  
->>>>>>> 87a8872a35c24054033efdee13689ac3607d9989
   }
 }

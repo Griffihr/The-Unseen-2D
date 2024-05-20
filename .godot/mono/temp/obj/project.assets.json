@@ -88,23 +88,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\linus\\.nuget\\packages\\": {},
+    "C:\\Users\\Linus Gäddnäs\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\Godot\\The-Unseen-2D\\2d hidden.csproj",
+      "projectUniqueName": "D:\\Godot Game\\2d hidden\\2d hidden.csproj",
       "projectName": "2d hidden",
-      "projectPath": "E:\\Godot\\The-Unseen-2D\\2d hidden.csproj",
-      "packagesPath": "C:\\Users\\linus\\.nuget\\packages\\",
-      "outputPath": "E:\\Godot\\The-Unseen-2D\\.godot\\mono\\temp\\obj\\",
+      "projectPath": "D:\\Godot Game\\2d hidden\\2d hidden.csproj",
+      "packagesPath": "C:\\Users\\Linus Gäddnäs\\.nuget\\packages\\",
+      "outputPath": "D:\\Godot Game\\2d hidden\\.godot\\mono\\temp\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\linus\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Linus Gäddnäs\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -160,7 +160,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.102\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.401\\RuntimeIdentifierGraph.json"
       }
     }
   }

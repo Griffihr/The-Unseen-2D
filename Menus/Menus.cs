@@ -3,7 +3,6 @@ using System;
 
 public partial class Menus : Node
 {
-<<<<<<< HEAD
 	[Export]
 	private int Port;
 
@@ -17,11 +16,6 @@ public partial class Menus : Node
 	private Control lobby;
 	private OptionButton optionButton;
 	private LineEdit port;
-=======
-	private Control _Connect;
-	private Control _Lobby;
-	private OptionButton _Optionbutton;
->>>>>>> 87a8872a35c24054033efdee13689ac3607d9989
 
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
@@ -52,11 +46,7 @@ public partial class Menus : Node
 
 	public void ConnectedToServer() {
 		GD.Print("Connected");
-<<<<<<< HEAD
 		RpcId(1, "SendPlayerInformation", connect.GetNode<LineEdit>("PlayerName").Text , Multiplayer.GetUniqueId());
-=======
-		RpcId(1, "SendPlayerInformation", _Connect.GetNode<LineEdit>("PlayerName").Text , Multiplayer.GetUniqueId());
->>>>>>> 87a8872a35c24054033efdee13689ac3607d9989
 	}
 
 	public void ConnectionFailed() {
@@ -78,14 +68,9 @@ public partial class Menus : Node
 		Peer.Host.Compress(ENetConnection.CompressionMode.RangeCoder);
 		Multiplayer.MultiplayerPeer = Peer;
 
-<<<<<<< HEAD
 		GD.Print("Server Started");
 
 		SendPlayerInformation(connect.GetNode<LineEdit>("PlayerName").Text, 1);
-=======
-		SendPlayerInformation(_Connect.GetNode<LineEdit>("PlayerName").Text, 1);
-		GD.Print("Server Started");
->>>>>>> 87a8872a35c24054033efdee13689ac3607d9989
 
 		connect.Hide();
 		lobby.Show();
@@ -93,23 +78,17 @@ public partial class Menus : Node
 	}
 
 	public void JoinServer() {
-<<<<<<< HEAD
 		Port = int.Parse(port.Text);
-=======
-
-		var _Port = int.Parse(_Connect.GetNode<LineEdit>("Port").Text);
-		var _IpAdress = _Connect.GetNode<LineEdit>("Ip").Text;
->>>>>>> 87a8872a35c24054033efdee13689ac3607d9989
 
 		ENetMultiplayerPeer Peer = new ENetMultiplayerPeer();
-		var Error = Peer.CreateClient(_IpAdress, _Port);
-		
+		var Error = Peer.CreateClient(Ip_Adress, Port);
 		if(Error != Error.Ok) {
 			GD.Print("Error" + Error.ToString());
 			return;
 		}
 		
 		Peer.Host.Compress(ENetConnection.CompressionMode.RangeCoder);
+		
 		Multiplayer.MultiplayerPeer = Peer;
 
 		connect.Hide();
@@ -125,7 +104,6 @@ public partial class Menus : Node
 
 	[Rpc(MultiplayerApi.RpcMode.AnyPeer, CallLocal = true, TransferMode = MultiplayerPeer.TransferModeEnum.Reliable)]
 	public void StartGame() {
-<<<<<<< HEAD
 		
 		foreach (var item in GameManager.Players) 
 		{
@@ -133,13 +111,11 @@ public partial class Menus : Node
 		}
 
 		lobby.Hide();
-=======
-		_Lobby.Hide();
->>>>>>> 87a8872a35c24054033efdee13689ac3607d9989
 
 		var Scene = GD.Load<PackedScene>("res://Map.tscn");	
 		var _Scene = Scene.Instantiate<Node>();
 		this.GetParent().AddChild(_Scene);
+
 	}
 
 	[Rpc(MultiplayerApi.RpcMode.AnyPeer)]

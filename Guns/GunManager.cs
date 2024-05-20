@@ -4,6 +4,10 @@ using System;
 
 public partial class GunManager : Node2D
 {
+
+	[Export]
+	public Array<PackedScene> _PrimaryGuns { get; set;}
+
 	[Export]
 	public string Primary;
 	[Export]
@@ -13,12 +17,12 @@ public partial class GunManager : Node2D
 	public Resource GunResource;
 
 
-	public override void _Ready()
-	{
+    public override void _Ready()
+    {
 		InstantiateGuns();
-	}
+    }
 
-	public void InstantiateGuns() {
+    public void InstantiateGuns() {
 		
 	}
 }

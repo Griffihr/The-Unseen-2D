@@ -52,7 +52,6 @@ offset_left = 63.0
 offset_top = 138.0
 offset_right = 433.0
 offset_bottom = 192.0
-text = "127.0.0.1"
 
 [node name="Label2" type="Label" parent="Connect/Ip"]
 layout_mode = 0
@@ -68,7 +67,6 @@ offset_left = 66.0
 offset_top = 227.0
 offset_right = 300.0
 offset_bottom = 285.0
-text = "8910"
 
 [node name="Label" type="Label" parent="Connect/Port"]
 layout_mode = 1
