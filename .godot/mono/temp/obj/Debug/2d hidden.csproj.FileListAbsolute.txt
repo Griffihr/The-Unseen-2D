@@ -15,3 +15,20 @@ D:\Godot Game\2d hidden\.godot\mono\temp\obj\Debug\refint\2d hidden.dll
 D:\Godot Game\2d hidden\.godot\mono\temp\obj\Debug\2d hidden.pdb
 D:\Godot Game\2d hidden\.godot\mono\temp\obj\Debug\2d hidden.genruntimeconfig.cache
 D:\Godot Game\2d hidden\.godot\mono\temp\obj\Debug\ref\2d hidden.dll
+E:\Godot\The-Unseen-2D\.godot\mono\temp\bin\Debug\2d hidden.deps.json
+E:\Godot\The-Unseen-2D\.godot\mono\temp\bin\Debug\2d hidden.runtimeconfig.json
+E:\Godot\The-Unseen-2D\.godot\mono\temp\bin\Debug\2d hidden.dll
+E:\Godot\The-Unseen-2D\.godot\mono\temp\bin\Debug\2d hidden.pdb
+E:\Godot\The-Unseen-2D\.godot\mono\temp\bin\Debug\GodotSharp.dll
+E:\Godot\The-Unseen-2D\.godot\mono\temp\bin\Debug\GodotSharpEditor.dll
+E:\Godot\The-Unseen-2D\.godot\mono\temp\obj\Debug\2d hidden.csproj.AssemblyReference.cache
+E:\Godot\The-Unseen-2D\.godot\mono\temp\obj\Debug\2d hidden.GeneratedMSBuildEditorConfig.editorconfig
+E:\Godot\The-Unseen-2D\.godot\mono\temp\obj\Debug\2d hidden.AssemblyInfoInputs.cache
+E:\Godot\The-Unseen-2D\.godot\mono\temp\obj\Debug\2d hidden.AssemblyInfo.cs
+E:\Godot\The-Unseen-2D\.godot\mono\temp\obj\Debug\2d hidden.csproj.CoreCompileInputs.cache
+E:\Godot\The-Unseen-2D\.godot\mono\temp\obj\Debug\2d hidden.csproj.CopyComplete
+E:\Godot\The-Unseen-2D\.godot\mono\temp\obj\Debug\2d hidden.dll
+E:\Godot\The-Unseen-2D\.godot\mono\temp\obj\Debug\refint\2d hidden.dll
+E:\Godot\The-Unseen-2D\.godot\mono\temp\obj\Debug\2d hidden.pdb
+E:\Godot\The-Unseen-2D\.godot\mono\temp\obj\Debug\2d hidden.genruntimeconfig.cache
+E:\Godot\The-Unseen-2D\.godot\mono\temp\obj\Debug\ref\2d hidden.dll

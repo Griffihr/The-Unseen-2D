@@ -24,11 +24,11 @@ public partial class InputComponent : Node2D
 		return crouchInput;
 	}
 
-    public void GetInputs(double delta)
-    {
-        moveInput = Input.GetAxis("left", "right");
+	public void GetInputs(double delta)
+	{
+		moveInput = Input.GetAxis("left", "right");
 		runInput = Input.IsActionPressed("sprint");
 		jumpInput = Input.IsActionPressed("jump");
 		crouchInput = Input.IsActionPressed("crouch");
-    }
+	}
 }
